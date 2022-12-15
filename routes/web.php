@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,9 @@ Route::middleware([
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/redirects', [HomeController::class, 'redirects']);
+Route::get('/users', [AdminController::class, 'users']);
+Route::get('/delete/{id}', [AdminController::class, 'delete']);
+
+
 
  
