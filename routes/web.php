@@ -28,8 +28,33 @@ Route::middleware([
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/redirects', [HomeController::class, 'redirects']);
+
+
 Route::get('/users', [AdminController::class, 'users']);
 Route::get('/delete/{id}', [AdminController::class, 'delete']);
+Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
+Route::post('/uploadfood', [AdminController::class, 'uploadfood']);
+Route::get('/delete_food/{id}', [AdminController::class, 'delete_food']);
+Route::get('/edit_food/{id}', [AdminController::class, 'edit_food']);
+Route::post('/update/{id}', [AdminController::class, 'update']);
+Route::post('/reservation', [AdminController::class, 'reservation']);
+Route::get('/reserved', [AdminController::class, 'reserved']);
+Route::get('/cancel_reserve/{id}', [AdminController::class, 'cancel_reserve']);
+Route::get('/view_shefs', [AdminController::class, 'view_shefs']);
+Route::post('/add_shefs', [AdminController::class, 'add_shefs']);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

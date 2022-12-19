@@ -28,6 +28,30 @@
     <div class="container-scroller">
     
     @include('admin.navbar')
+
+
+    <div>
+            <form action="{{url('/add_shefs')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div>
+                    <label for="">Name</label>
+                    <input style="color: black" type="text" placeholder="name" name="name" required>
+                </div>
+                <div>
+                    <label for="">Speciality</label>
+                    <input style="color: black" type="text" placeholder="speciality" name="speciality" required>
+                </div>
+                <div>
+                    <label for="">Image</label>
+                    <input type="file" name="image" required>
+                </div>
+                <div>
+
+                    <button class="btn btn-success" type="submit">Add Shef</button>
+                </div>
+
+            </form>
    
     </div>
     <!-- plugins:js -->

@@ -23,11 +23,61 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+    <style>
+        .thh{
+            /* border: solid wheat 2px; */
+            background-color: gray;
+            
+        }
+        .th{
+            border: solid wheat 2px;
+          padding: 5px;
+        }
+        .tht{
+            border: solid wheat 2px;
+            padding-left:20px ;
+        }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
     
     @include('admin.navbar')
+
+    <div style="padding: 30px;">
+        <table>
+            <tr class="thh">
+                <th class="th">Guest Name</th>
+                <th class="th">Email</th>
+                <th class="th">Phone</th>
+                <th class="th">Guest</th>
+                <th class="th">Date</th>
+                <th class="th">Time</th>
+                <th class="th">Message</th>
+                <th class="th">Calcel</th>
+
+
+
+            </tr>
+
+            @foreach ($rvdata as $item)
+                 <tr>
+                    <td class="th">{{$item->name}}</td>
+                    <td class="th">{{$item->email}}</td>
+                    <td class="th">{{$item->phone}}</td>
+                    <td class="tht">{{$item->guest}}</td>
+                    <td class="th">{{$item->date}}</td>
+                    <td class="th">{{$item->time}}</td>
+                    <td class="th">{{$item->message}}</td>
+                    <td class="th">
+                        <a class="btn btn-danger" href="{{url('/cancel_reserve',$item->id)}}">Cancel</a>
+                    </td>
+
+                 </tr>
+            @endforeach
+           
+        </table>
+    </div>
    
     </div>
     <!-- plugins:js -->
