@@ -50,7 +50,7 @@
             <td class="bgg">Food quantity</td>
            
             <td class="bgg">Totalprice</td>
-             <td class="bgg">photo</td>
+             {{-- <td class="bgg">photo</td> --}}
         </tr>
         @foreach ($orders as $item)
             <tr>
@@ -61,12 +61,19 @@
                 <th class="bgg">{{$item->food_name}}</th>
                 <th class="bgg">{{$item->quantity}}</th>
                 <th class="bgg">${{$item->price* $item->quantity}}</th>
-                <th class="bgg">{{$item->quantity}}</th>
+                {{-- <th class="bgg">{{$item->quantity}}</th> --}}
 
             </tr>
         @endforeach
         
     </table>
+    <div>
+        <form action="{{url('/search')}}" method="GET">
+            @csrf
+            <input style="color: blue;" type="text" name="search" placeholder="search">
+            <input type="submit" value="Search" class="btn btn-primary">
+        </form>
+    </div>
    
     </div>
     <!-- plugins:js -->

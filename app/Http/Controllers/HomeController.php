@@ -13,8 +13,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // $count = Cart::where('user_id')->count();
-
+        if(Auth::id()){
+            return redirect('redirects');
+        }
+        else
         $food = Food::all();
         $shefs = Chefs::all();
         return view('home', compact('food', 'shefs'));
@@ -60,12 +62,17 @@ class HomeController extends Controller
 
     public function showcart(Request $request, $id)
     {
-
-        $count = Cart::where('user_id', $id)->count();
+        if(Auth::id()==$id){
+            $count = Cart::where('user_id', $id)->count();
         $data = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
         $data2 = Cart::select('*')->where('user_id', '=', $id)->get();
 
-        return view('showcart', compact('count', 'data', 'data2'));
+        return view('showcart', compact('count', 'data', 'data2')); 
+        }
+       else
+       {
+        return redirect()->back();
+       }
     }
 
     public function remove_item($id)
