@@ -157,7 +157,9 @@
             <td class="bgg">
                 <input type="text" name="quantity[]" value="{{$item->quantity}}" hidden >
                 
-                {{$item->quantity}}</td>
+                {{$item->quantity}}
+            </td>
+            
             <td class="bgg">
             <img height="800px" width="180px" src="/food_images/{{$item->image}}" alt="">
             </td>

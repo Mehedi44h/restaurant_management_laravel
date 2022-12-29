@@ -50,3 +50,4 @@ Route::get('/reserved', [AdminController::class, 'reserved']);
 Route::get('/cancel_reserve/{id}', [AdminController::class, 'cancel_reserve']);
 Route::get('/view_shefs', [AdminController::class, 'view_shefs']);
 Route::post('/add_shefs', [AdminController::class, 'add_shefs']);
+Route::get('/orders', [AdminController::class, 'orders']);

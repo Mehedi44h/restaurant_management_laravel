@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chefs;
 use App\Models\Food;
+use App\Models\Order;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -120,6 +121,12 @@ class AdminController extends Controller
         $shefs->image = $imagename;
         $shefs->save();
         return redirect()->back();
+   }
+
+
+   public function orders(){
+    $orders=Order::all();
+    return view('admin.orders',compact('orders'));
    }
 
    

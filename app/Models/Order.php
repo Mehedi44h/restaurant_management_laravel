@@ -13,6 +13,7 @@ class Order extends Model
         'foodname',
         'price',
         'quantity',
+        // 'image',
         'name',
         'phone',
         'address',
