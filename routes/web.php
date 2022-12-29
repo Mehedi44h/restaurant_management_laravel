@@ -26,8 +26,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/redirects', [HomeController::class, 'redirects']);
+Route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
+Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
+Route::get('/remove_item/{id}', [HomeController::class, 'remove_item']);
+Route::post('/order_confirm', [HomeController::class, 'order_confirm']);
+
+
+
+
 
 
 Route::get('/users', [AdminController::class, 'users']);
@@ -42,20 +50,3 @@ Route::get('/reserved', [AdminController::class, 'reserved']);
 Route::get('/cancel_reserve/{id}', [AdminController::class, 'cancel_reserve']);
 Route::get('/view_shefs', [AdminController::class, 'view_shefs']);
 Route::post('/add_shefs', [AdminController::class, 'add_shefs']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

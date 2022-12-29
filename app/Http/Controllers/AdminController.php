@@ -104,7 +104,8 @@ class AdminController extends Controller
     }
 
    public function view_shefs(){
-    return view('admin.view_shefs');
+    $shefs=Chefs::all();
+    return view('admin.view_shefs',compact('shefs'));
    }
    
    public function add_shefs(Request $request){

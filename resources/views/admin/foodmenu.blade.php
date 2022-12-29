@@ -113,14 +113,6 @@
               </td>
             
 
-            {{-- @if ($item->usertype=='0')
-           
-              <td class="bgg">
-                  <a class="btn btn-danger" href="{{url('/delete',$item->id)}}">Delete</a>
-              </td>
-            @endif --}}
-          
-
         </tr>
         @endforeach
         
